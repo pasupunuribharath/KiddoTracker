@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "573033766840",
+    "firebase_url": "https://kiddotracker-546e9-default-rtdb.firebaseio.com",
+    "project_id": "kiddotracker-546e9",
+    "storage_bucket": "kiddotracker-546e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573033766840:android:ed51aa91a830befb01794d",
+        "android_client_info": {
+          "package_name": "com.example.kiddotracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "573033766840-5ibae7qsnob7kkbljogmnt8ne9vug737.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoJ_nIZsNbBuPJ5TBrYStLdzShyXPagT0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "573033766840-5ibae7qsnob7kkbljogmnt8ne9vug737.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

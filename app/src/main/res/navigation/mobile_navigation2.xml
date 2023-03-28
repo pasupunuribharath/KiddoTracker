@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation2"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.kiddotracker.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_childDetails"
+            app:destination="@id/childDetails" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_parent_edit_details"
+        android:name="com.example.kiddotracker.ui.Parent_edit_details"
+        android:label="@string/menu_editParent"
+        tools:layout="@layout/fragment_parent_edit_details" />
+    <fragment
+        android:id="@+id/addChild2"
+        android:name="com.example.kiddotracker.ui.AddChild"
+        android:label="Add Your Child"
+        tools:layout="@layout/fragment_add_child" >
+        <action
+            android:id="@+id/action_addChild2_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/childDetails"
+        android:name="com.example.kiddotracker.ChildDetails"
+        android:label="Child Details"
+        tools:layout="@layout/fragment_child_details">
+        <argument
+            android:name="ChildId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_childDetails_to_parent_child_loc"
+            app:destination="@id/parent_child_loc" />
+    </fragment>
+    <fragment
+        android:id="@+id/parent_child_loc"
+        android:name="com.example.kiddotracker.parent_child_loc"
+        android:label="Child Locations"
+        tools:layout="@layout/fragment_parent_child_loc">
+        <argument
+            android:name="latitude"
+            app:argType="string" />
+        <argument
+            android:name="longitude"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

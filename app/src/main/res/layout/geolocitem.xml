@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:paddingStart="10dp"
+    app:cardBackgroundColor="#DF3B3B"
+    app:cardCornerRadius="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/recycler_item"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/DataWithTime"
+            android:layout_width="30dp"
+            android:layout_height="54dp"
+            android:layout_weight="1"
+            android:paddingStart="10dp"
+            android:text="DateWithTime"
+            android:textColor="@color/orange" />
+
+        <TextView
+            android:id="@+id/latilongi"
+            android:layout_width="120dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:paddingStart="15dp"
+            android:paddingTop="15dp"
+            android:text="LatitudeAndLongitude"
+            android:textColor="#FDFDFD"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/navImg"
+            android:layout_width="10dp"
+            android:layout_height="66dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/logo_login" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

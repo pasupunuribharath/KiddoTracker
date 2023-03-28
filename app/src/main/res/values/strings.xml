@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">KiddoTracker</string>
+    <string name="track_your_">Track your child</string>
+    <string name="parent_login">Parent login</string>
+    <string name="child_login">Child login</string>
+    <string name="login_logo">Login logo</string>
+    <string name="SignUp_description">Do you want to protect your child?</string>
+    <string name="SignUp">SignUp</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="login">login</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="parent_email">Parent Email</string>
+    <string name="child_email">Child Email</string>
+    <string name="full_name">Full Name</string>
+    <string name="parent_username">Parent Username</string>
+    <string name="child_username">Child Username</string>
+    <string name="title_activity_parent_login_main">Parent_login_main</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_editParent">Edit Profile</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_parent_home">ParentHome</string>
+    <string name="Add_children">adding children</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="edit_photo">Edit photo</string>
+    <string name="name">Name :</string>
+    <string name="mobile_no">Mobile No</string>
+    <string name="_name">Name</string>
+    <string name="mobile_no_">Mobile No :</string>
+    <string name="parent_profile_photo">Parent Profile photo</string>
+    <string name="edit">Edit</string>
+    <string name="full_name_">Full Name</string>
+    <string name="name_">Name</string>
+    <string name="username">Username</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="child_photo">child photo</string>
+    <string name="add_child">ADD Child</string>
+    <string name="email_id">Email Id :</string>
+    <string name="child">Child</string>
+    <string name="child_name">Child Name</string>
+    <string name="forgot_password_">Forgot Password?</string>
+    <string name="button">Button</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="enter_email">Enter Email</string>
+</resources>
