@@ -28,9 +28,12 @@ class ParentHome : AppCompatActivity() {
     private lateinit var firebaseStorage: FirebaseStorage
     private lateinit var firebaseAuth: FirebaseAuth
 
+
     @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        pass= intent.getStringExtra("password").toString()
 
         binding = ActivityParentHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -62,12 +65,12 @@ class ParentHome : AppCompatActivity() {
             header_name.text = it.child("fullName").value.toString()
             header_email.text = it.child("email").value.toString()
 
-                firebaseStorage.getReference("profile").child(firebaseAuth.uid.toString())
-                    .child("profile.jpg").downloadUrl.addOnSuccessListener {
-
-                        Picasso.get().load(it).into(header_image)
-
-                    }
+//                firebaseStorage.getReference("profile").child(firebaseAuth.uid.toString())
+//                    .child("profile.jpg").downloadUrl.addOnSuccessListener {
+//
+//                        Picasso.get().load(it).into(header_image)
+//
+//                    }
 
 
 
@@ -82,7 +85,9 @@ class ParentHome : AppCompatActivity() {
                 R.id.nav_home,R.id.nav_parent_edit_details,R.id.addChild2,R.id.childDetails,R.id.map
             ), drawerLayout
         )
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration)
+        NavigationUI.setupWithNavController(binding.navView, navController)
+        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
@@ -118,6 +123,9 @@ class ParentHome : AppCompatActivity() {
         lateinit var header_name: TextView
         @SuppressLint("StaticFieldLeak")
         lateinit var header_image:ImageView
+
+        lateinit var pass:String
+
 
     }
 }

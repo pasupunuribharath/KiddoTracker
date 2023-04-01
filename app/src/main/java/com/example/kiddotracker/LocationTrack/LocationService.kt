@@ -70,7 +70,7 @@ class LocationService : Service() {
                  mapData.DateWithTime= Date().time.seconds.toString()
 
                  firebaseDatabase.getReference("GeoLocation").child(firebaseAuth.uid.toString()+Date().time.seconds).setValue(mapData)
-                 firebaseDatabase.getReference("Child").child(firebaseAuth.uid.toString()).child("active").setValue("true")
+                 firebaseDatabase.getReference("Child").child(firebaseAuth.uid.toString()).child("Active").setValue("Active")
 
              }.launchIn(servieScope)
   }
@@ -92,6 +92,7 @@ class LocationService : Service() {
                mapData.DateWithTime= Date().time.seconds.toString()
 
                firebaseDatabase.getReference("GeoLocation").child(firebaseAuth.uid.toString()+Date().time.seconds).setValue(mapData)
+               firebaseDatabase.getReference("Child").child(firebaseAuth.uid.toString()).child("Active").setValue("Not Active")
 
            }.launchIn(servieScope)
         stopSelf()

@@ -6,8 +6,9 @@ data class ChildData(
     var parentId:String="",
     var email:String="",
     var password:String="",
-    var isActive:Boolean=false,
     var image:String="",
     var parent_email:String="",
-    var parent_password:String=""
+    var parent_password:String="",
+    var Active:String="Not Active",
+
 )

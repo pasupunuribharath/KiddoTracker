@@ -51,22 +51,18 @@ class ChildAdaptar(private val ChildList:ArrayList<ChildData>): RecyclerView.Ada
 
         val currentItem = ChildList[position]
 
-        val isActive=""
-        if(currentItem.isActive.toString()=="true")
-        {
-            holder.child_active.text="Active"
-        }
-        else holder.child_active.text="Not Active"
+
 
         holder.child_name.text=currentItem.name
+        holder.child_active.text=currentItem.Active.toString()
 
-        firebaseStorage=FirebaseStorage.getInstance()
-        firebaseStorage.getReference("profile"!!).child(currentItem.id!!).child("profile.jpg"!!)
-            .downloadUrl.addOnSuccessListener {
-
-                Picasso.get().load(it).into(holder.child_image)
-
-            }
+//        firebaseStorage=FirebaseStorage.getInstance()
+//        firebaseStorage.getReference("profile"!!).child(currentItem.id!!).child("profile.jpg"!!)
+//            .downloadUrl.addOnSuccessListener {
+//
+//                Picasso.get().load(it).into(holder.child_image)
+//
+//            }
 
 
 
@@ -79,7 +75,7 @@ class ChildAdaptar(private val ChildList:ArrayList<ChildData>): RecyclerView.Ada
 
          val child_image :ImageView= ItemView.findViewById(R.id.child_image)
          val child_name:TextView= ItemView.findViewById(R.id.child_name)
-        val child_active:TextView=ItemView.findViewById(R.id.child_active)
+         val child_active:TextView=ItemView.findViewById(R.id.child_active)
 
 
         init{

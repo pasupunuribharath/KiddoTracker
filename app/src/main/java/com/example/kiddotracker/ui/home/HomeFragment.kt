@@ -44,6 +44,13 @@ class HomeFragment : Fragment() {
     ): View {
 
 
+        firebaseAuth= FirebaseAuth.getInstance()
+        firebaseDatabase=FirebaseDatabase.getInstance()
+        firebaseStorage=FirebaseStorage.getInstance()
+
+
+
+
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         return binding.root
@@ -52,9 +59,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        firebaseAuth= FirebaseAuth.getInstance()
-        firebaseDatabase=FirebaseDatabase.getInstance()
-        firebaseStorage=FirebaseStorage.getInstance()
+
 
 
          ChildRecyclerView =binding.childShowRecycler
@@ -66,15 +71,16 @@ class HomeFragment : Fragment() {
        dataRef= firebaseDatabase.getReference("Child")
 
 
-       Log.v("user",firebaseAuth.uid.toString())
+    }
 
-        var parent_id=""
-        firebaseDatabase.getReference("Child").child(firebaseAuth.uid.toString()).get().addOnSuccessListener {
+    override fun onResume() {
+        super.onResume()
 
-            parent_id=it.child("parentId").value.toString()
-        }
 
-        Log.v("parent id",parent_id)
+
+
+
+
 
 
 
@@ -131,15 +137,18 @@ class HomeFragment : Fragment() {
 
 
 
-
-
-
     }
-
 
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+         val parent_email: String=FirebaseAuth.getInstance().currentUser?.email.toString()
+
+
+
     }
 }

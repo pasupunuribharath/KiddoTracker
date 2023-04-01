@@ -6,6 +6,7 @@ import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,8 +14,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.example.kiddotracker.ParentHome
 import com.example.kiddotracker.R
 import com.example.kiddotracker.databinding.FragmentAddChildBinding
+import com.example.kiddotracker.ui.home.HomeFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -77,17 +80,22 @@ class AddChild : Fragment() {
 
 
 
+
             val data= ChildData()
 
-            val parentId=data.parentId
 
             data.name=binding.addChildName.text.toString()
             data.email=binding.childEmail.text.toString()
             data.password=binding.addChildPassword.text.toString()
             data.parentId=firebaseAuth.uid.toString()
-            data.image=binding.imageView5.toString()
+            data.parent_email= firebaseAuth.currentUser?.email.toString()
 
-            data.parent_email = firebaseAuth.currentUser?.email.toString()
+
+
+
+
+
+
 
             if(data.email.isNotEmpty() && data.password.isNotEmpty() && data.name.isNotEmpty()) {
 
@@ -101,8 +109,28 @@ class AddChild : Fragment() {
 
                          data.id=uid
                          firebaseDatabase.getReference("Child").child(uid).setValue(data)
-                         firebaseStorage.getReference("profile").child(uid).child("profile.jpg")
-                          .putFile(imageUri!!)
+
+                         if(imageUri!=null) {
+                             firebaseStorage.getReference("profile").child(uid).child("profile.jpg")
+                                 .putFile(imageUri!!)
+                         }
+
+
+                         Toast.makeText(view.context,"Succesfully added",Toast.LENGTH_SHORT).show()
+
+
+                          firebaseAuth.signOut()
+
+                         Log.v("Parent Password",ParentHome.pass)
+                         Log.v("Parent Email",HomeFragment.parent_email)
+
+                         firebaseAuth.signInWithEmailAndPassword(HomeFragment.parent_email,ParentHome.pass)
+                             .addOnCompleteListener {
+
+
+                             }
+
+
 
                      }
                      else
@@ -113,31 +141,12 @@ class AddChild : Fragment() {
 
                  }
 
-                var parent_email=""
-                var parent_password=""
-
-                firebaseDatabase.getReference("Parent").child(parentId).get().addOnSuccessListener {
-
-                    parent_email=it.child("email").value.toString()
-
-                    parent_password=it.child("passowrd").value.toString()
-                }
-
-                if(parent_email.isNotEmpty() && parent_password.isNotEmpty())
-                firebaseAuth.signInWithEmailAndPassword(parent_email,parent_password).addOnCompleteListener {
-
-                }
-
-
-                findNavController().navigate(R.id.action_addChild2_to_nav_home)
 
             }
             else
             {
                 Toast.makeText(view.context,"Fields cannot be empty",Toast.LENGTH_SHORT).show()
             }
-
-
 
 
 

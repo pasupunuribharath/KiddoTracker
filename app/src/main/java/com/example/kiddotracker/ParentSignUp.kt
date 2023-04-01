@@ -54,7 +54,6 @@ class ParentSignUp : AppCompatActivity() {
 
                             val data = ParentData(
                                 fullName = fullName,
-                                image ="",
                                 email = email,
                                 id = firebaseAuth.uid.toString(),
                                 mobileNum = "Your Mobile Number",

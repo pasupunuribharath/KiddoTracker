@@ -84,17 +84,17 @@ class Parent_edit_details : Fragment() {
         val parentRef =  firebaseDatabase.getReference("Parent")
         parentRef.child(firebaseAuth.uid.toString()).get().addOnSuccessListener { it ->
 
+            Pdata.password=it.child("password").value.toString()
             Pdata.email=it.child("email").value.toString()
             Pdata.id=it.child("id").value.toString()
-            Pdata.image=it.child("image").value.toString()
             Pdata.mobileNum=it.child("mobileNum").value.toString()
             Pdata.fullName=it.child("fullName").value.toString()
-           firebaseStorage.getReference("profile"!!).child(firebaseAuth.uid.toString()!!).child("profile.jpg"!!)
-               .downloadUrl.addOnSuccessListener {
-
-                   Picasso.get().load(it).into(binding.imageView4)
-
-               }
+//           firebaseStorage.getReference("profile"!!).child(firebaseAuth.uid.toString()!!).child("profile.jpg"!!)
+//               .downloadUrl.addOnSuccessListener {
+//
+//                   Picasso.get().load(it).into(binding.imageView4)
+//
+//               }
 
 
 

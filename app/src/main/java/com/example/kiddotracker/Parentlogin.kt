@@ -42,6 +42,7 @@ class Parentlogin : AppCompatActivity() {
                     if(it.isSuccessful)
                     {
                         val intent = Intent(this,ParentHome::class.java)
+                        intent.putExtra("password",password)
                         startActivity(intent)
 
                     }else

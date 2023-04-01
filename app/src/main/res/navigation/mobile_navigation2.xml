@@ -24,11 +24,7 @@
         android:id="@+id/addChild2"
         android:name="com.example.kiddotracker.ui.AddChild"
         android:label="Add Your Child"
-        tools:layout="@layout/fragment_add_child" >
-        <action
-            android:id="@+id/action_addChild2_to_nav_home"
-            app:destination="@id/nav_home" />
-    </fragment>
+        tools:layout="@layout/fragment_add_child" />
     <fragment
         android:id="@+id/childDetails"
         android:name="com.example.kiddotracker.ChildDetails"
